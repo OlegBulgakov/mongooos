@@ -11,16 +11,6 @@ require('./models/task.model');
 
 const Task = mongoose.model('todoitem');
 
-app.get('/test', (req, res) => {
-  Task.find({}).then((data) => {
-    res.json({
-      todoitems: data
-    });
-  }, (err) => {
-    res.status(500).json('Error');
-  })
-});
-
 require('./routes/task.route')(app)
 
 app.listen(3000);

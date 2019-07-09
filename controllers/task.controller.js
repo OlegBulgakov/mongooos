@@ -4,7 +4,7 @@ const Task = mongoose.model('todoitem');
 
 function getAll(req, res) {
     Task.find({}).then((data) => {
-        res.json({todos: data});
+        res.json({todoitems: data});
     }, (err) => {
         res.status(500).json('Error');
     })
