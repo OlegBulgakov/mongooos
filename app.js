@@ -1,4 +1,3 @@
-const http = require('http');
 const port = process.env.PORT || 3000
 const express = require('express');
 const mongoose = require('mongoose');
@@ -10,8 +9,6 @@ app.use(bodyParser.json());
 
 mongoose.connect('mongodb://localhost:27017/todo');
 require('./models/task.model');
-
-const Task = mongoose.model('todoitem');
 
 require('./routes/task.route')(app)
 
