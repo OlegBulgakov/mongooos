@@ -1,11 +1,11 @@
 const TaskController = require('../controllers/task.controller');
 
 module.exports = function (app) {
-    app.get('/test', TaskController.getAll)
-    app.post('/test', TaskController.postTask)
-    app.delete('/test/:id', TaskController.deleteTask)
-    app.delete('/test', TaskController.deleteClearCompleted)
-    app.put('/test', TaskController.checkbox)
-    app.put('/test', TaskController.changeData)
-    app.put('/test/setAll', TaskController.checkAll)
+    app.get('/', TaskController.getAll)
+    app.post('/', TaskController.postTask)
+    app.delete('/:id', TaskController.deleteTask)
+    app.delete('/', TaskController.deleteClearCompleted)
+    app.put('/', TaskController.checkbox)
+    app.put('/', TaskController.changeData)
+    app.put('/setAll', TaskController.checkAll)
 }
