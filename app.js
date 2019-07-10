@@ -1,3 +1,5 @@
+const http = require('http');
+const port = process.env.PORT || 3000
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -13,4 +15,6 @@ const Task = mongoose.model('todoitem');
 
 require('./routes/task.route')(app)
 
-app.listen(3000);
+app.listen(port,() => {
+    console.log(`Server running at port `+port);
+  });
