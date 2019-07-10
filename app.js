@@ -1,4 +1,3 @@
-// const port = process.env.PORT || 3000
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -19,12 +18,10 @@ require('./models/task.model');
 
 require('./routes/task.route')(app)
 
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server running at port `+port);
+const PORT = process.env.MONGODB_URI || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
-
-
 
 
 
